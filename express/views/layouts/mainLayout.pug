@@ -4,18 +4,17 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title PAGE N0T FOUND
+        title #{docTitle}
         link(rel="stylesheet", href="/css/main.css")
+        block styles
     body
         header.main-header
             nav.main-nav
                 ul.main-header-ul
                     li.main-header-li
-                        a.active(href="/") Shop
+                        a(href="/", class=(path === '/' ? 'active': '')) Shop
 
                     li.main-header-li
-                        a(href="/admin/add-product") Add Product
+                        a(href="/admin/add-product", class=(path === '/admin/add-product' ? 'active': '' )) Add Product
 
-        main
-            h1 404 ERROR
-            h3 This Ain't It, Chief...
+        block content
