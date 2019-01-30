@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/',(req, res, next) => {
     const products = adminData.products;
     //render the dynamic template
-    res.render('shop', {prods: products,docTitle:'My Shop', path : '/'});
+    res.render('shop', {prods: products,docTitle:'My Shop', path : '/', hasProducts: products.length > 0});
     // console.log(adminData.products);
     // //console.log('In another middleware');
     // //res.send('<h1>Hello from express</h1>');

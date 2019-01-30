@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{docTitle}}</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul class="main-header-ul">
+                <li class="main-header-li"><a class="active" href="/">Shop</a></li>
+
+                <li class="main-header-li">
+                    <a href="/admin/add-product">Add Product</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{#if hasProducts}}
+        <div class="grid">
+            {{#each prods}}
+            <article class="card product-item">
+                <header class="card-header">
+                    <h1 class="product-title">{{this.title}}</h1>
+                </header>
+                <div class="card-image">
+                    <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Fbook%2Fbook_PNG2114.png&f=1"
+                        alt="A book">
+                </div>
+                <div class="card-content">
+                    <h2 class="product-price">$19.99</h2>
+                    <p class="product-description">A very interesting book about so many events</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn">Add to Cart</button>
+                </div>
+
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h1>NO PRODUCTS FOUND</h1>
+        {{/if}}
+    </main>
+</body>
+
+</html>
