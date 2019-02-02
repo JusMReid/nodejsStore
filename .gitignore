@@ -4,3 +4,4 @@ express/a2
 /a3
 /nodenotes
 express/node_modules
+.DS_Store
