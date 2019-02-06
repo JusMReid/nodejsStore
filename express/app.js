@@ -21,7 +21,7 @@ app.set("view engine", "hbs");
 app.set('view engine', 'ejs');
 app.set("views", "views");
 
-const adminData = require("./routes/admin.js");
+const adminRoutes = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
 
 /*
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/admin", adminData.routes);
+app.use("/admin", adminRoutes);
 
 app.use(shopRoutes);
 
