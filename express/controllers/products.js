@@ -1,6 +1,6 @@
 //For all the product logic
 
-const products = [];
+const Product = require('../models/product.js');
 
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
@@ -13,12 +13,20 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
+    const product = new Product(req.body.title);
+    product.save();
     //console.log(req.body);
+
+    /*
+    Added below logic to model
+    -------------------------
     products.push({ title: req.body.title });
+    */
     res.redirect("/");
   };
 
   exports.getProducts = (req, res, next) => {
+      const products = Product.fetchAll();
     //render the dynamic template
     res.render("shop", {
       prods: products,
